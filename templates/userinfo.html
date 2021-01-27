@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Golang Echo & OneLogin</title>
+</head>
+<body>
+  <div class="d-flex justify-content-center align-items-center" style="height:100px;">
+    <p class="h4 text-center">Logged In User Info</p>
+  </div>
+  <div class="table-responsive"> 
+    <table class="table table-striped table-bordered mx-auto w-auto">
+      <thead class="thead-dark">
+        <th scope="col">Claim</th>
+        <th scope="col">Value</th>
+      <thead>
+      <tbody>
+        {{ range $key, $value := . }}
+        <tr><td>{{ $key }}</td><td>{{ $value }}</td></tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  <div class="d-flex justify-content-center align-items-center" style="height:100px;">
+    <a href="/logout" class="btn btn-primary">Logout</a>
+  </div>
+</body>
+</html>
